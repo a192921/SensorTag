@@ -198,19 +198,19 @@ def main():
 
             # gather results in a python dictionary
             results = dict(
-                t=round(temperature.get_ambient_fahrenheit(), 2),
-                l=round(light.get_ambient_luxs(), 2),
-                h=round(humidity.get_humidity(), 2),
-                p=round(pressure.get_barometric_pressure(), 2)
+                temperature=round(temperature.get_ambient_fahrenheit(), 2),
+                light=round(light.get_ambient_luxs(), 2),
+                humidity=round(humidity.get_humidity(), 2),
+                pressure=round(pressure.get_barometric_pressure(), 2)
             )
 
             os.system('clear')
 
             # pretty print our results
-            print 'Temperature: %s' % results['t']
-            print 'Light: %s' % results['l']
-            print 'Humidity: %s' % results['h']
-            print 'Pressure: %s' % results['p']
+            print 'Temperature: %s' % results['temperature']
+            print 'Light: %s' % results['light']
+            print 'Humidity: %s' % results['humidity']
+            print 'Pressure: %s' % results['pressure']
 
             f = open('/sensor.json', 'w')
             f.write(json.dumps(results))
